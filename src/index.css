@@ -1,13 +1,96 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root {
+  --Light-Cyan: hsl(193, 38%, 86%);
+  --Neon-Green: hsl(150, 100%, 66%);
+  --Grayish-Blue: hsl(217, 19%, 38%);
+  --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+  --Dark-Blue: hsl(218, 23%, 16%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 28px;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--Dark-Blue);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  position: relative;
+}
+
+.advice-div {
+  background-color: var(--Dark-Grayish-Blue);
+  width: 120%;
+  height: 300px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 70px 120px 1fr;
+  justify-items: center;
+
+}
+h4 {
+  color: var(--Neon-Green);
+  font-size: medium;
+  letter-spacing: 2px;
+}
+p {
+  color: var(--Light-Cyan);
+  width: 420px;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop, .mobile {
+  padding-top: 20px;
+}
+
+.dice-button {
+ background-color: var(--Neon-Green);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  top: 88%;
+  right: 33%;
+
+}
+
+.dice-button:hover {
+  cursor: pointer;
+  box-shadow: hsl(150, 100%, 66%) 0px 0px 36px ;
+}
+
+@media (max-width: 700px) {
+  .advice-div {
+    width: 100%;
+    height: 300px;
+    grid-template-columns: 300px;
+    grid-template-rows: 40px 1fr 1fr;
+  }
+
+  .p {
+    max-width: 270px;
+    }
+  .desktop {
+    display: none;
+  }
+
+.mobile {
+  display: block;
+}
+
+.dice-button {
+  right: 37%
+}
 }
